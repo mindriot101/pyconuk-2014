@@ -5,6 +5,8 @@ task :serve do
   sh "python -m SimpleHTTPServer"
 end
 
+task :server => :serve
+
 desc "Publish to github pages"
 task :publish do
   sh "git checkout gh-pages"
