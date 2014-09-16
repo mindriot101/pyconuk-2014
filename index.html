@@ -62,51 +62,51 @@
                     </aside>
                 </section>
 
-                    <section data-background="images/exoplanet-destruction_01.jpg">
-                        <h1>Exoplanets</h1>
-                    </section>
-                    <section>
-                        <img src="images/ngts_logo_colour_reverse_large.png" class="stretch" style="border: 0px"/>
+                <section data-background="images/exoplanet-destruction_01.jpg">
+                    <h1>Exoplanets</h1>
+                </section>
+                <section>
+                    <img src="images/ngts_logo_colour_reverse_large.png" class="stretch" style="border: 0px"/>
 
-                        <aside class="notes" data-markdown>
-                            * Next Generation Transit Survey
-                            * Under construction
-                            * Search for warm Neptunes
-                        </aside>
-                    </section>
+                    <aside class="notes" data-markdown>
+                        * Next Generation Transit Survey
+                        * Under construction
+                        * Search for warm Neptunes
+                    </aside>
+                </section>
 
-                    <section>
-                        <h3>Data products</h3>
-                        <ul>
-                            <li>12 telescopes</li>
-                            <li>10 second exposures</li>
-                            <li>2k x 2k cameras</li>
-                            <li>50 GB per night per camera</li>
-                            <li>600 GB per night</li>
-                        </ul>
-                    </section>
+                <section>
+                    <h3>Data products</h3>
+                    <ul>
+                        <li>12 telescopes</li>
+                        <li>10 second exposures</li>
+                        <li>2k x 2k cameras</li>
+                        <li>50 GB per night per camera</li>
+                        <li>600 GB per night</li>
+                    </ul>
+                </section>
 
-                    <section>
-                        <h2>Analysis pipeline</h2>
+                <section>
+                    <h2>Analysis pipeline</h2>
 
-                        <ul>
-                            <li>Mostly written in Python</li>
-                            <li>Use of <code>numpy</code> for speed</li>
-                            <li>Heavily parallelised</li>
-                        </ul>
+                    <ul>
+                        <li>Mostly written in Python</li>
+                        <li>Use of <code>numpy</code> for speed</li>
+                        <li>Heavily parallelised</li>
+                    </ul>
 
-                        <aside class="notes" data-markdown>
-                            * Stress engineering data and still commissioning
-                        </aside>
-                    </section>
+                    <aside class="notes" data-markdown>
+                        * Stress engineering data and still commissioning
+                    </aside>
+                </section>
 
-                    <section>
-                    <h2><code>numpy</code></h2>
-                    </section>
+                <section>
+                <h2><code>numpy</code></h2>
+                </section>
 
-                    <section>
-                        <h3>Easy parallelism</h3>
-                        <pre><code data-trim>
+                <section>
+                    <h3>Easy parallelism</h3>
+                    <pre><code data-trim>
 def reduce_image(filename):
     '''
     Peform some data manipulation
@@ -132,18 +132,18 @@ pool = mp.Pool()
 
 # Reduce all of the images
 pool.map(reduce_images, image_names)
-                        </code></pre>
-                        <p class="fragment">Problem: what if we need more arguments?</p>
-                        <aside class="notes" data-markdown>
-                            * data reduction requires other files for input
-                                * bias dark flat
-                        </aside>
+                    </code></pre>
+                    <p class="fragment">Problem: what if we need more arguments?</p>
+                    <aside class="notes" data-markdown>
+                        * data reduction requires other files for input
+                            * bias dark flat
+                    </aside>
 
-                    </section>
+                </section>
 
-                    <section>
-                        <h3>Enter <code>functools.partial</code> <span style="font-size: 40%">(2.7+)</span></h3>
-                        <pre><code data-trim>
+                <section>
+                    <h3>Enter <code>functools.partial</code> <span style="font-size: 40%">(2.7+)</span></h3>
+                    <pre><code data-trim>
 def reduce_image(image_data, bias_frame, dark_frame, flat_frame):
     '''
     Peform some data manipulation
@@ -159,13 +159,13 @@ image_reducer = functools.partial(reduce_image,
                         <pre class="fragment"><code data-trim>
 pool = mp.Pool()
 pool.map(image_reducer, image_filenames)
-                        </code></pre>
-                        <aside class="notes" data-markdown>
-                            * 2.7+
-                            * earlier versions:
-                                * define function in code body
-                        </aside>
-                    </section>
+                    </code></pre>
+                    <aside class="notes" data-markdown>
+                        * 2.7+
+                        * earlier versions:
+                            * define function in code body
+                    </aside>
+                </section>
 
                 <section data-background="images/wd-accreting.jpg">
                     <h1 style="color: black;">White Dwarfs</h1>
