@@ -1,0 +1,12 @@
+digraph {
+    bgcolor=transparent;
+    /* bgcolor=black; */
+    rankdir=LR;
+
+    node [color=White, fontcolor=White];
+    edge [color=White];
+
+    "Data collection" -> Manipulation;
+    Manipulation -> Analysis;
+    Analysis -> Visualisation;
+}
