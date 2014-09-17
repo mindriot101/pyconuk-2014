@@ -112,6 +112,40 @@
 
                 <section>
                 <h2><code>numpy</code></h2>
+                <span class="fragment">
+                <h4>Without <code>numpy</code></h4>
+                <pre><code data-trim>
+def reduce_image(image_data, bias_frame, dark_frame, flat_frame):
+    out = []
+    for i in xrange(len(image_data)):
+        corrected_data = (image_data[i] - bias_frame[i] - dark_frame[i]) / flat_frame[i]
+        out.append(corrected_data)
+    return out
+                </code></pre>
+                </span>
+                <span class="fragment">
+                <h4>With <code>numpy</code></h4>
+                <pre><code data-trim>
+def reduce_image(image_data, bias_frame, dark_frame, flat_frame):
+    '''
+    Peform some data manipulation
+    '''
+    return (image_data - bias_frame - dark_frame) / flat_frame
+                </code></pre>
+
+                <ul>
+                <li>Less boilerplate code</li>
+                <li>More efficient</li>
+                <li>Easier to read</li>
+                </ul>
+
+                </span>
+
+
+
+                <aside class="notes" data-markdown>
+                * Huge advantage for image manipulation
+                </aside>
                 </section>
 
                 <section>
