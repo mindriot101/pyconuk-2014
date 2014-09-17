@@ -34,17 +34,17 @@ tom
       * coordinating tasks
         * `subprocess`
     * data analysis
-* Explosions in the distant universe
-  * fitting SEDs
-    * `scipy.optimize`
-* White dwarfs
 * Instrumentation
   * Wrapping ULTRACAM code
 * Modelling
   * Maximum entropy Doppler imaging
+  * emcee
+* Analysis
+  * IPython notebook
 * General
   * ability to start with raw data and end with visualisations
   * wrapping C for speed
+  * anaconda
 
 ## Packages
 
