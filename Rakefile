@@ -19,3 +19,10 @@ desc "Synchronise with github repository"
 task :push do
   sh "git push origin master"
 end
+
+desc "Run the iPython server"
+task :ipython do
+  Dir.chdir("ipython") do
+    sh "ipython notebook --no-browser --matplotlib inline"
+  end
+end
