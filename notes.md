@@ -1,5 +1,36 @@
 # Studying astronomy at the University of Warwick, with Python
 
+## Title
+
+* University of Warwick - just down the road
+* Astronomy group expanded immensely recently
+* Heavy users of Python
+* Many different fields
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Responses
 
 ### Danny
