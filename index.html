@@ -332,6 +332,20 @@ pool.map(image_reducer, image_filenames)
 
                 <section>
                     <h2>Uncertainties</h2>
+
+                    <pre><code class="python" data-trim>
+from uncertainties import ufloat
+
+a = ufloat(2, 1)
+b = ufloat(3, 2)
+c = a + b
+
+print(c)
+# 5.0+/-2.23606797749979
+
+print(c.error_components()) 
+# {1.0, 3.0+/-2.0: 2.0}
+                    </code></pre>
                 </section>
 
                 <section data-background="#FFFFFA">
