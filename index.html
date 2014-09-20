@@ -50,6 +50,7 @@
                     <aside class="notes" data-markdown>
                         * Simon Walker
                         * PDRA University of Warwick
+                        * how we use python to study astronomy
                     </aside>
                 </section>
 
@@ -57,10 +58,26 @@
                 <section>
                 <h2>Why Python?</h2>
                 <img class="fragment stretch" src="images/analysis-flowchart.svg" style="border: 0px;"></img>
+                <aside class="notes" data-markdown>
+                    * not just for astronomy
+                    * collect some data
+                        * big telescope
+                    * manipulate to remove known systematic effects
+                    * perform analysis
+                    * visualise the results
+                    * list packages
+                        * numpy
+                        * scipy
+                        * matplotlib
+                </aside>
                 </section>
 
                 <section>
                 <img src="images/analysis-flowchart-realistic.svg" class="stretch" style="border: 0px;"></img>
+                <aside class="notes" data-markdown>
+                * tend to go back and forth
+                * each step requires visualisation
+                </aside>
                 <p class="fragment"><i>Python does all of this</i></p>
                 </section>
 
@@ -79,6 +96,13 @@
                 <section>
                     <section data-background="images/wd-accreting.jpg">
                         <h1>Data collection</h1>
+                        <aside class="notes" data-markdown>
+                        * image backgrounds from the topic areas
+                        * white dwarf
+                            * star the size of the earth
+                            * mass of the sun
+                        * accreting from companion star
+                        </aside>
                     </section>
 
                     <section>
@@ -86,6 +110,8 @@
                         <img class="stretch" src="images/ultracam.jpg" style="border: 0px;"></img>
 
                         <aside class="notes" data-markdown>
+                        * 3 cameras
+                        * high speed
                         * Software written by Tom Marsh (C++)
                         * Python wrapper for easy access to data files
                         </aside>
@@ -95,6 +121,12 @@
                 <section>
                 <section data-background="images/exoplanet-destruction_01.jpg">
                 <h1>Manipulation</h1>
+                <aside class="notes" data-markdown>
+                * background - exoplanets
+                * thought that 4/5 stars have planets
+                -------
+                * removal of known systematic effects
+                </aside>
                 </section>
 
                 <section>
@@ -103,11 +135,24 @@
                     <aside class="notes" data-markdown>
                         * Next Generation Transit Survey
                         * Under construction at Paranal, Chile
+                        * Looking for extrasolar planets
+                        * Transit method
                     </aside>
                 </section>
 
                 <section>
                 <img src="images/ngts/location.png" style="border: 0px;" class="stretch"></img>
+                </section>
+
+                <section>
+                <img src="images/ngts/site.png" style="border: 0px;" class="stretch"></img>
+                <aside class="notes" data-markdown>
+                * vlt - one of the largest telescopes in the world
+                * vista - survey telescope
+                * 20km away from E-ELT
+                ---
+                * team after completion of the building
+                </aside>
                 </section>
 
                 <section>
@@ -118,11 +163,16 @@
                     <h3>Data products</h3>
                     <ul>
                         <li>12 telescopes</li>
-                        <li>10 second exposures</li>
-                        <li>2k x 2k cameras</li>
+                        <!-- <li>10 second exposures</li> -->
+                        <!-- <li>2k x 2k cameras</li> -->
                         <li>20 GB per night per camera</li>
-                        <li>250 GB per night</li>
+                        <li>240 GB per night</li>
+                        <li>86TB per year</li>
                     </ul>
+
+                    <aside class="notes" data-markdown>
+                    * not nearly in realms of e.g. CERN
+                    </aside>
                 </section>
 
                 <section>
@@ -135,7 +185,7 @@
                     </ul>
 
                     <aside class="notes" data-markdown>
-                        * Stress engineering data and still commissioning
+                    * a few tips for speed
                     </aside>
                 </section>
 
@@ -174,6 +224,12 @@ def reduce_image(image_data, bias_frame, dark_frame, flat_frame):
 
                 <aside class="notes" data-markdown>
                 * Huge advantage for image manipulation
+
+                -------
+
+                * as astronomers we take images
+                * quite often want to perform the same procedure for each pixel
+                * 2d arrays well represented by numpy arrays
                 </aside>
                 </section>
 
@@ -208,6 +264,8 @@ pool.map(reduce_images, image_names)
                     </code></pre>
                     <p class="fragment">Problem: what if we need more arguments?</p>
                     <aside class="notes" data-markdown>
+                        * each image independent
+                            * highly parallelisable
                         * data reduction requires other files for input
                             * bias dark flat
                     </aside>
@@ -244,6 +302,11 @@ pool.map(image_reducer, image_filenames)
             <section>
                 <section data-background='images/mw_5000m_beletsky1300.jpg'>
                     <h1>Analysis</h1>
+                    <aside class="notes" data-markdown>
+                        * alma array
+                            * atacama large millimetre array
+                        * milky way
+                    </aside>
                 </section>
 
                 <section>
@@ -260,12 +323,25 @@ pool.map(image_reducer, image_filenames)
                 <section data-background="#FFFFFA">
                     <h3><a href="http://dan.iel.fm/emcee/current/">emcee</a></h3>
                     <img class="stretch" src="images/emcee-examples.png"></img>
+                    <aside class="notes" data-markdown>
+                        * what parameters go into model
+                        * how confident you are about the parameters
+                    </aside>
                 </section>
             </section>
 
             <section>
                 <section data-background="images/wide3.jpg">
                     <h1>Visualisation</h1>
+                    <aside class="notes" data-markdown>
+                        * hubble deep field
+                        * furthest galaxies ever seen
+
+                        ---
+
+                        * aren't quite the most distant objects
+                        * GRBs
+                    </aside>
                 </section>
 
                 <section data-background="#FFFFFA">
@@ -275,7 +351,7 @@ pool.map(image_reducer, image_filenames)
                 </section>
 
                 <section>
-                    <h2>IPython example</h2>
+                    <h2><a href="http://localhost:8891/notebooks/Analysis.ipynb">IPython example</a></h2>
                 </section>
             </section>
 
