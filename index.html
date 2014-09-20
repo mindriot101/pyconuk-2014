@@ -315,7 +315,8 @@ pool.map(image_reducer, image_filenames)
 
 				theme: Reveal.getQueryHash().theme || 'night', // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
-                transitionSpeed: 'fast',
+                transitionSpeed: Reveal.getQueryHash().transitionSpeed || 'slow',
+                backgroundTransition: Reveal.getQueryHash().backgroundTransition || 'default', // default/none/slide/concave/convex/zoom
 
                 // Dimensions
                 margin: 0.01,
