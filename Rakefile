@@ -23,6 +23,6 @@ end
 desc "Run the iPython server"
 task :ipython do
   Dir.chdir("ipython") do
-    sh "ipython notebook --matplotlib inline"
+    sh "ipython notebook --matplotlib inline --no-browser"
   end
 end
